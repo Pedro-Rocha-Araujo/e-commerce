@@ -16,3 +16,17 @@ header a {
   text-decoration: none;
   font-size: clamp(1rem, 12vw, 2.2rem);
 }
+
+div.carrinho {
+  position: relative;
+  padding: 10px 8px 5px 8px;
+}
+
+div.carrinho span {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  background-color: #f33;
+  padding: 2px 8px;
+  border-radius: 50%;
+}

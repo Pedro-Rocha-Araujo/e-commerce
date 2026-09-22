@@ -8,9 +8,12 @@ export default function Header() {
 
         <h1>E-commerce</h1>
 
-        <Link href="/">
-          <i className="fa-solid fa-cart-shopping"></i>
-        </Link>
+        <div className="carrinho">
+          <Link href="/">
+            <i className="fa-solid fa-cart-shopping"></i>
+          </Link>
+          <span>0</span>
+        </div>
         
       </div>
     </header>
