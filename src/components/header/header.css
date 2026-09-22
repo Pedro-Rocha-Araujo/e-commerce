@@ -1,0 +1,19 @@
+
+header {
+  color: #fff;
+  background-color: #689195;
+  
+  padding: 1.5rem 0rem
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(1rem, 12vw, 2.2rem);
+}
