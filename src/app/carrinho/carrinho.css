@@ -8,7 +8,7 @@ div.itens-carrinho {
   flex-direction: column;
   align-items: center;
   border-radius: 0.6rem;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 div.item-carrinho {
@@ -20,12 +20,14 @@ div.item-carrinho {
   justify-content: space-between;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  box-shadow: -2px 2px 2px 1px #0000004f;
 }
 
 div.item-carrinho img {
   width: 100%;
   max-width: 100px;
   border-radius: 0.5rem;
+  aspect-ratio: 1/1;
 }
 
 div.botoes {

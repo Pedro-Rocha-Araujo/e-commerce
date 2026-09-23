@@ -13,7 +13,8 @@ div.produto {
   background-color: #ddd;
   width: 100%;
   border-radius: 0.5rem;
-  padding: 0.5rem;  
+  padding: 0.6rem;  
+  box-shadow: -2px 2px 2px 1px #0000004f;
 }
 
 div.produto img {
