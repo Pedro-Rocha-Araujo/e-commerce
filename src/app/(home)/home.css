@@ -10,9 +10,8 @@ div.produtos {
 }
 
 div.produto {
-  background-color: #ccc;
+  background-color: #ddd;
   width: 100%;
-  max-width: 350px;
   border-radius: 0.5rem;
   padding: 0.5rem;  
 }
@@ -22,6 +21,14 @@ div.produto img {
   border-radius: 0.5rem;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+
+div.infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.1rem 0;
 }
 
 @media screen and (max-width: 1280px) {
