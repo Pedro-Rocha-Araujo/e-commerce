@@ -32,23 +32,26 @@ div.infos {
   padding: 0.1rem 0;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1320px) {
   div.produtos {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
   }
 }
 
 @media screen and (max-width: 920px) {
   div.produtos {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
   }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
   div.produtos {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.produtos {
+    grid-template-columns: 1fr;
   }
 }

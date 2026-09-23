@@ -44,3 +44,8 @@ div.botoes button {
   color: #fff;
   background-color: #689195;
 }
+
+div.itens-carrinho-footer {
+  width: 100%;
+  max-width: 700px;
+}
