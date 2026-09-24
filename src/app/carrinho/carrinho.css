@@ -14,18 +14,35 @@ div.itens-carrinho {
 div.item-carrinho {
   background-color: #ddd;
   width: 100%;
-  max-width: 700px;
+  max-width: 780px;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   padding: 0.5rem;
   border-radius: 0.5rem;
   box-shadow: -2px 2px 2px 1px #0000004f;
 }
 
+div.infos-produto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+div.infos-quantidade {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: end;
+}
+
+div.infos-quantidade span {
+  text-align: right;
+}
+
 div.item-carrinho img {
-  width: 100%;
-  max-width: 100px;
+  width: 80%;
+  max-width: 150px;
   border-radius: 0.5rem;
   aspect-ratio: 1/1;
 }
@@ -47,5 +64,5 @@ div.botoes button {
 
 div.itens-carrinho-footer {
   width: 100%;
-  max-width: 700px;
+  max-width: 780px;
 }

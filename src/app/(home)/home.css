@@ -14,7 +14,7 @@ div.produto {
   width: 100%;
   border-radius: 0.5rem;
   padding: 0.6rem;  
-  box-shadow: -2px 2px 2px 1px #0000004f;
+  box-shadow: -2px 2px 3px 1px #0000003f;
 }
 
 div.produto img {
