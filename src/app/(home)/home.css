@@ -5,7 +5,7 @@ section.home {
 div.produtos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  place-items: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -17,10 +17,16 @@ div.produto {
   box-shadow: -2px 2px 3px 1px #0000003f;
 }
 
+div.produto h3 {
+  margin-top: 0.2rem;
+  line-height: 1.1rem;
+  min-height: calc(1.1rem * 2);
+}
+
 div.produto img {
   width: 100%;
-  border-radius: 0.5rem;
   aspect-ratio: 1/1;
+  border-radius: 0.5rem;
   object-fit: cover;
 }
 
