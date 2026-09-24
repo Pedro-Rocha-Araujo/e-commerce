@@ -31,6 +31,10 @@ span {
   font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
+i {
+  cursor: pointer;
+}
+
 button {
   font-size: clamp(0.85rem, 4vw, 1rem);
   cursor: pointer;
