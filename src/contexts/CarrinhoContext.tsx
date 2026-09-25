@@ -42,10 +42,20 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
 
       let carrinho = itensCarrinho
 
-      carrinho[indexProduto].amount = (carrinho[indexProduto].amount + 1)
-      carrinho[indexProduto].total = (carrinho[indexProduto].amount * carrinho[indexProduto].price)
+      carrinho = carrinho.map((item, index)=> {
+        if(indexProduto === index) {
+          return {
+            ...item,
+            amount: item.amount + 1,
+            total: (item.amount + 1) * item.price
+          }
+        }
+        return item
+      })
 
       setItensCarrinho(carrinho)
+
+      
       return toast.success("Mais um item adicionado")
     } catch(erro) {
       console.log(erro)
