@@ -5,9 +5,7 @@ import { useContext } from "react"
 import { CarrinhoContext } from "@/contexts/CarrinhoContext"
 
 export default function Carrinho() {
-  const { itensCarrinho, removerProduto, adicionarProduto } = useContext(CarrinhoContext)
-
-
+  const { itensCarrinho, removerProduto, adicionarProduto, total } = useContext(CarrinhoContext)
 
   return (
     <section className="container carrinho">
@@ -43,7 +41,7 @@ export default function Carrinho() {
           }) }
 
           <div className="itens-carrinho-footer">
-            <span className="total"><strong>Total:</strong> R$ 200,00</span>
+            <span className="total"><strong>Total:</strong> R$ {total}</span>
           </div>
 
         </div> 

@@ -43,7 +43,7 @@ button {
 
 .erro {
   color: #fff;
-  background-color: #f33;
+  background-color: #f44;
   font-size: clamp(0.85rem, 4vw, 1.1rem);
   text-align: center;
   padding: 0.6rem 2rem;

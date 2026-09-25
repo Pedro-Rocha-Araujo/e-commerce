@@ -10,7 +10,8 @@ interface CarrinhoInterface {
   itensCarrinho: ProdutoInterface[],
   qtdCarrinho: number,
   adicionarProduto: (produto: ProdutoInterface)=>void,
-  removerProduto: (produto: ProdutoInterface)=>void
+  removerProduto: (produto: ProdutoInterface)=>void,
+  total: number
 }
 
 interface CarrinhoProviderProps {
@@ -21,28 +22,27 @@ export const CarrinhoContext = createContext({} as CarrinhoInterface)
 
 function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
   const [itensCarrinho, setItensCarrinho] = useState<ProdutoInterface[]>([])
+  const [total, setTotal] = useState<number>(0)
 
   function adicionarProduto(produto: ProdutoInterface) {
     try {
       const indexProduto = itensCarrinho.findIndex((i)=> {
         return i.id === produto.id
       }) // Devolve -1 caso o produto não esteja adicionado.
-
+      let array = itensCarrinho
       if(indexProduto === -1) {
         let novoProduto = {
           ...produto,
           amount: 1,
           total: produto.price
         }
-        setItensCarrinho((prevValue)=> {
-          return [...prevValue, novoProduto]
-        })
+        array.push(novoProduto)
+        setItensCarrinho(array)
+        calcularTotal(array)
         return toast.success("Item adicionado")
       }
 
-      let carrinho = itensCarrinho
-
-      carrinho = carrinho.map((item, index)=> {
+      array = array.map((item, index)=> {
         if(indexProduto === index) {
           return {
             ...item,
@@ -52,8 +52,8 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
         }
         return item
       })
-
-      setItensCarrinho(carrinho)
+      setItensCarrinho(array)
+      calcularTotal(array)
 
       
       return toast.success("Mais um item adicionado")
@@ -67,15 +67,18 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
       const indexProduto = itensCarrinho.findIndex((i)=> {
         return i.id === produto.id
       })
-      let novoCarrinho = itensCarrinho
-      if(novoCarrinho[indexProduto].amount === 1) {
-        setItensCarrinho(novoCarrinho.filter((i)=> {
+      let array = itensCarrinho
+
+      if(array[indexProduto].amount === 1) {
+        array = array.filter((i)=> {
           return i.id !== produto.id
-        }))
+        })
+        setItensCarrinho(array)
+        calcularTotal(array)
         return toast.success("Item removido")
       }
 
-      novoCarrinho = itensCarrinho.map((item, index)=> {
+      array = itensCarrinho.map((item, index)=> {
         if(index === indexProduto) {
           return {
             ...item,
@@ -85,11 +88,20 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
         }
         return item
       })
-      setItensCarrinho(novoCarrinho)
+      setItensCarrinho(array)
+      calcularTotal(array)
       return toast.success("Quantidade reduzida")
     } catch(erro) {
       console.log(erro)
     }
+  }
+
+  function calcularTotal(itens: ProdutoInterface[]) {
+    const array = itens
+    const total = array.reduce((acumulador, valorAtual)=> {
+      return acumulador + valorAtual.total
+    }, 0)
+    setTotal(total)
   }
 
   return (
@@ -97,7 +109,8 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
       itensCarrinho, 
       qtdCarrinho: itensCarrinho.length,
       adicionarProduto,
-      removerProduto
+      removerProduto,
+      total
     }}>
       {children}
     </CarrinhoContext.Provider>

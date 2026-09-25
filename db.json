@@ -41,6 +41,21 @@
       "description": "O smartwatch que oferece o mais completo conjunto de funções de monitoramento para o acompanhamento da Saúde e do Bem-Estar de uma maneira precisa e confiável. Possui os recursos essenciais e mais avançados para medir e acompanhar o estado da sua Saúde, funções como monitor de Batimento Cardíaco, Pressão Arterial, Eletrocardiograma, Oxímetro, Detecção de Queda e Chamada de Emergência, programa de Coaching do Sono para monitorar e melhorar a qualidade do seu Sono , além da Bioimpedância para avaliar a composição corporal de maneira rápida e interativa, e verificar a evolução os resultados dos exercícios refletidos no seu corpo. Possui uma série de funções avançadas de treinos com mais de 95 modalidades. ",
       "price": 1139.00,
       "cover": "https://i.imgur.com/Ua4bURp.jpg"
+    },
+    { 
+      "id": 7, 
+      "title": "Mousepad control 45x45", 
+      "description": "Com as medidas perfeitas para uso diário, o Mousepad Keytime Standard proporciona o espaço necessário para movimentos amplos e confortáveis, sem ocupar muito espaço na sua mesa. Ideal para quem procura um modelo compacto e eficiente.",
+      "price": 40.00,
+      "cover": "https://http2.mlstatic.com/D_NQ_NP_2X_621848-MLA96058863388_102025-F.webp"
+    },
+    { 
+      "id": 8, 
+      "title": "Controle de X-Box", 
+      "description": "Eleve o nível dos seus jogos com o Controle Sem Fio Xbox – Preto Carbono, apresentando um design elegante e modernizado, com superfícies esculpidas e geometria refinada para maior conforto durante horas de jogo. Compatível com Xbox Series X, Xbox Series S, Xbox One e Windows 10/11, este controle é a escolha perfeita para jogadores que buscam versatilidade, desempenho e um visual clássico e sofisticado. Experimente a jogabilidade sem fio de baixa latência e nunca perca um momento de ação graças à tecnologia Xbox Wireless e Bluetooth, que permite conectar facilmente o controle ao seu console, PC, tablets e smartphones. Além disso, conta com a entrada de áudio estéreo de 3,5 mm para conectar qualquer fone de ouvido compatível diretamente no controle.",
+      "price": 40.00,
+      "cover": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/158630/xlarge/Controle-Sem-Fio-Xbox-Series-X-e-S-Microsoft-Carbon-Black-Bluetooth-Preto_1783965189.jpg"
     }
   ]
 }
+
