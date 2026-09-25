@@ -3,7 +3,8 @@
 export interface ProdutoInterface {
   id: number,
   title: string,
-  description: string,
   price: number,
-  cover: string
+  amount: number,
+  cover: string,
+  total: number
 }

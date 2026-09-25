@@ -1,12 +1,16 @@
 'use client'
 
 import "./home.css"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CarrinhoContext } from "@/contexts/CarrinhoContext";
 import { ProdutoInterface } from "@/interfaces";
 import api from "@/config/api";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [produtos, setProdutos] = useState<ProdutoInterface[]>()
+
+  const { adicionarProduto } = useContext(CarrinhoContext)
 
   useEffect(()=> {
     async function getProdutos() {
@@ -19,6 +23,15 @@ export default function Home() {
     }
     getProdutos()
   }, [])
+
+  function adicionarAoCarrinho(produto: ProdutoInterface) {
+    try { 
+      adicionarProduto(produto)
+    } catch(erro) {
+      console.log(erro)
+      toast.error("Erro!")
+    }
+  }
 
   return (
     <section className="home container">
@@ -35,7 +48,7 @@ export default function Home() {
               <h3>{produto.title.split(" ").slice(0, 3).join(" ")}...</h3>
               <div className="infos">
                 <span>R$ {produto.price}</span>
-                <i className="fa-solid fa-cart-plus fa-lg"></i>
+                <i onClick={()=>adicionarAoCarrinho(produto)} className="fa-solid fa-cart-plus fa-lg"></i>
               </div>
             </div>
           )

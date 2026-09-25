@@ -1,57 +1,53 @@
+'use client'
+
 import "./carrinho.css"
+import { useContext } from "react"
+import { CarrinhoContext } from "@/contexts/CarrinhoContext"
 
 export default function Carrinho() {
+  const { itensCarrinho, removerProduto, adicionarProduto } = useContext(CarrinhoContext)
+
+
+
   return (
     <section className="container carrinho">
       <h2> <i className="fa-solid fa-cart-shopping"></i> Carrinho</h2>
-      <div className="itens-carrinho">
+      { itensCarrinho.length === 0 ? (
+        <p className="erro">Nenhum item no carrinho!</p>
+      ): (
+        <div className="itens-carrinho">
+          
+          { itensCarrinho.map((item)=> {
+            return (
+              <div key={item.id} className="item-carrinho">
 
-        <div className="item-carrinho">
+                <div className="infos-produto">
+                  <img 
+                    src={item.cover} 
+                  />
+                  <span><strong>Valor: </strong>R$ {item.price}</span>
+                </div>
 
-          <div className="infos-produto">
-            <img 
-              src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWuMEbQMWrh--PaEr1HGx4kVJudIUOTudNp0Kh1AwjmaN0HizkVQgIouKO&s=10`} 
-            />
-            <span><strong>Valor: </strong>R$ 20,00</span>
+                <div className="infos-quantidade">
+                  <div className="botoes">
+                    <button onClick={()=>removerProduto(item)}>-</button>
+                    <span>{item.amount}</span>
+                    <button onClick={()=>adicionarProduto(item)}>+</button>
+                  </div>
+                  <span><strong>Total: </strong>R$ {item.total}</span>
+                </div>
+
+              </div>
+
+            )
+          }) }
+
+          <div className="itens-carrinho-footer">
+            <span className="total"><strong>Total:</strong> R$ 200,00</span>
           </div>
 
-          <div className="infos-quantidade">
-            <div className="botoes">
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
-            </div>
-            <span><strong>Total: </strong>R$ 20,00</span>
-          </div>
-
-        </div>
-
-        <div className="item-carrinho">
-
-          <div className="infos-produto">
-            <img 
-              src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWuMEbQMWrh--PaEr1HGx4kVJudIUOTudNp0Kh1AwjmaN0HizkVQgIouKO&s=10`} 
-            />
-            <span><strong>Valor: </strong>R$ 20,00</span>
-          </div>
-
-          <div className="infos-quantidade">
-
-            <div className="botoes">
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
-            </div>
-            <span><strong>Total: </strong>R$ 20,00</span>
-          </div>
-
-        </div>
-
-        <div className="itens-carrinho-footer">
-          <span className="total"><strong>Total:</strong> R$ 200,00</span>
-        </div>
-
-      </div>
+        </div> 
+      ) }
     </section>
     
   )

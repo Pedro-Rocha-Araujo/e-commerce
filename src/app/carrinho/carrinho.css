@@ -1,9 +1,16 @@
+section.carrinho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 section.carrinho h2 {
   text-align: center;
   margin: 1.5rem 0;
 }
 
 div.itens-carrinho {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

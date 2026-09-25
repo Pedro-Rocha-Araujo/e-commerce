@@ -3,6 +3,7 @@ import Script from "next/script";
 import Header from "@/components/header/Header";
 import "./globals.css";
 import CarrinhoProvider from "@/contexts/CarrinhoContext";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-BR">
       <body>
         <CarrinhoProvider>
+          <ToastContainer autoClose={1000} />
           <Header />
           <main>
             {children}
