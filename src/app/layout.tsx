@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Header from "@/components/header/Header";
 import "./globals.css";
+import CarrinhoProvider from "@/contexts/CarrinhoContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,10 +13,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR">
       <body>
-        <Header />
-        <main>
-          {children}
-        </main>
+        <CarrinhoProvider>
+          <Header />
+          <main>
+            {children}
+          </main>        
+        </CarrinhoProvider>
       </body>
       <Script src="https://kit.fontawesome.com/ba7c57d421.js"></Script>
     </html>

@@ -22,9 +22,10 @@ export default function Home() {
 
   return (
     <section className="home container">
-
+      { !produtos && (
+        <p className="erro">Nenhum produto encontrado!</p>
+      ) }
       <div className="produtos">
-
         { produtos?.map((produto)=> {
           return (
             <div key={produto.id} className="produto">

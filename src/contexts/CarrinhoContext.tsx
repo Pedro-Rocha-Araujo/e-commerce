@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext } from "react";
 import { useState } from "react";
 import { ReactNode } from "react";
@@ -11,7 +13,8 @@ interface ItemCarrinhoInterface {
 }
 
 interface CarrinhoInterface {
-  itensCarrinho: ItemCarrinhoInterface[]
+  itensCarrinho: ItemCarrinhoInterface[],
+  qtdCarrinho: number
 }
 
 interface CarrinhoProviderProps {
@@ -24,8 +27,13 @@ function CarrinhoProvider({ children }: CarrinhoProviderProps ) {
   const [itensCarrinho, setItensCarrinho] = useState<ItemCarrinhoInterface[]>([])
 
   return (
-    <CarrinhoContext.Provider value={{ itensCarrinho }}>
+    <CarrinhoContext.Provider value={{ 
+      itensCarrinho, 
+      qtdCarrinho: itensCarrinho.length 
+    }}>
       {children}
     </CarrinhoContext.Provider>
   )
 }
+
+export default CarrinhoProvider
