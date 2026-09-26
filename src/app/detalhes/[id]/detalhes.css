@@ -1,0 +1,37 @@
+section.detalhes {
+  margin-top: 1.5rem;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+section.detalhes h2 {
+  font-size: clamp(1rem, 8vw, 1.8rem);
+}
+
+section.detalhes h3 {
+  width: 100%;
+  font-size: clamp(0.95rem, 5vw, 1.5rem);
+}
+
+section.detalhes i {
+  font-size: clamp(1rem, 10vw, 1.8rem);
+  color: #000;
+}
+
+div.detalhes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.container img {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
