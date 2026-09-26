@@ -13,6 +13,7 @@ div.produtos {
 }
 
 div.produto {
+  position: relative;
   background-color: #ddd;
   width: 100%;
   border-radius: 0.5rem;
@@ -32,19 +33,21 @@ div.produto h3 {
   min-height: calc(1.1rem * 2);
 }
 
+div.produto .preco {
+  background-color: rgb(111, 0, 255);
+  color: #fff;
+  padding: 0.2rem 0.4rem;
+  border-radius:  0 0.5rem 0 0;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
 div.produto img {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 0.5rem;
   object-fit: cover;
-}
-
-div.infos {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.1rem 0;
 }
 
 @media screen and (max-width: 1320px) {

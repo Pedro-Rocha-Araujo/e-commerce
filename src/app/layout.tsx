@@ -15,7 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="pt-BR">
       <body>
         <CarrinhoProvider>
-          <ToastContainer autoClose={1000} />
+          <ToastContainer autoClose={1000} theme="dark" />
           <Header />
           <main>
             {children}

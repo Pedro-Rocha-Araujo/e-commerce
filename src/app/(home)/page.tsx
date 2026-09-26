@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { CarrinhoContext } from "@/contexts/CarrinhoContext";
 import { ProdutoInterface } from "@/interfaces";
 import api from "@/config/api";
-import { toast } from "react-toastify";
 
 export default function Home() {
   const [produtos, setProdutos] = useState<ProdutoInterface[]>()
@@ -26,15 +25,6 @@ export default function Home() {
     }
     getProdutos()
   }, [])
-
-  function adicionarAoCarrinho(produto: ProdutoInterface) {
-    try { 
-      adicionarProduto(produto)
-    } catch(erro) {
-      console.log(erro)
-      toast.error("Erro!")
-    }
-  }
 
   function mostrarDetalhes(id: number) {
     try {
@@ -56,11 +46,8 @@ export default function Home() {
               <img 
                 src={produto.cover} 
               />
-              <h3>{produto.title.split(" ").slice(0, 3).join(" ")}...</h3>
-              <div className="infos">
-                <span>R$ {produto.price}</span>
-                <i onClick={()=>adicionarAoCarrinho(produto)} className="fa-solid fa-cart-plus fa-lg"></i>
-              </div>
+              <h3>{produto.title}</h3>
+              <span className="preco">R$ {produto.price}</span>
             </div>
           )
         }) }
