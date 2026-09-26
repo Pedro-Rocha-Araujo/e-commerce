@@ -5,11 +5,28 @@ import { useState, useEffect, useContext } from "react"
 import api from "@/config/api"
 import "./detalhes.css"
 import { ProdutoInterface } from "@/interfaces"
+import { CarrinhoContext } from "@/contexts/CarrinhoContext"
+import { toast } from "react-toastify"
 
 export default function Detalhes() {
-  const [produto, setProduto] = useState<ProdutoInterface>()
-  console.log(produto)
+  const [produto, setProduto] = useState<ProdutoInterface | null>(null)
+
+  const { adicionarProduto } = useContext(CarrinhoContext)
+
   const { id } = useParams()
+
+  function adicionarItem() {
+    try {
+      if(!produto) {
+        toast.error("Erro")
+        return
+      }
+      adicionarProduto(produto)
+    } catch(erro) {
+      console.log(erro)
+      toast.error("Erro!")
+    }
+  }
 
   useEffect(()=> {
     async function getProduto() {
@@ -28,11 +45,11 @@ export default function Detalhes() {
       <img 
         src={produto?.cover}
         />
+      <h2>{produto?.title}</h2>
       <div className="detalhes">
-        <h2>{produto?.title}</h2>
-        <i className="fa-solid fa-cart-plus fa-lg"></i>
+        <h3><strong>Valor:</strong> R$ {produto?.price}</h3>
+        <i onClick={()=>adicionarItem()} className="fa-solid fa-cart-plus fa-lg"></i>
       </div>
-      <h3>Valor: R$ {produto?.price}</h3>
       <p>{produto?.description}</p>
     </section>
   )
