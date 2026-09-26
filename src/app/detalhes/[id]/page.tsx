@@ -1,10 +1,27 @@
 'use client'
 
 import { useParams } from "next/navigation"
+import { useState, useEffect } from "react"
+import api from "@/config/api"
 import "./detalhes.css"
+import { ProdutoInterface } from "@/interfaces"
 
 export default function Detalhes() {
+  const [produto, setProduto] = useState<ProdutoInterface>()
+  console.log(produto)
   const { id } = useParams()
+
+  useEffect(()=> {
+    async function getProduto() {
+      try {
+        const response = await api.get(`/products/${id}`)
+        setProduto(response.data)
+      } catch(erro) {
+        console.log(erro)
+      }
+    }
+    getProduto()
+  }, [])
 
   return (
     <section className="container detalhes">
@@ -12,11 +29,11 @@ export default function Detalhes() {
         src={`https://i.imgur.com/uXrbyfA.jpg`}
         />
       <div className="detalhes">
-        <h2>Nome do Produto</h2>
+        <h2>{produto?.title}</h2>
         <i className="fa-solid fa-cart-plus fa-lg"></i>
       </div>
-      <h3>Valor: R$ 400,00</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ullam amet impedit ratione! Accusamus totam veritatis numquam id explicabo inventore doloremque magnam deserunt veniam laborum? Neque nihil tempora sed repudiandae.</p>
+      <h3>Valor: R$ {produto?.price}</h3>
+      <p>{produto?.description}</p>
     </section>
   )
 }

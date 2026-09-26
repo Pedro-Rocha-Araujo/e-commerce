@@ -6,5 +6,6 @@ export interface ProdutoInterface {
   price: number,
   amount: number,
   cover: string,
-  total: number
+  total: number,
+  description: string
 }
