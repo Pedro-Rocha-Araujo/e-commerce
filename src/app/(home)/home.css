@@ -18,6 +18,12 @@ div.produto {
   border-radius: 0.5rem;
   padding: 0.6rem;  
   box-shadow: -2px 2px 3px 1px #0000003f;
+  transition: all 0.2s;
+}
+
+div.produto:hover {
+  transform: scale(1.015);
+  cursor: pointer;
 }
 
 div.produto h3 {

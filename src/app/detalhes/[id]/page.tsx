@@ -21,12 +21,12 @@ export default function Detalhes() {
       }
     }
     getProduto()
-  }, [])
+  }, [id])
 
   return (
     <section className="container detalhes">
       <img 
-        src={`https://i.imgur.com/uXrbyfA.jpg`}
+        src={produto?.cover}
         />
       <div className="detalhes">
         <h2>{produto?.title}</h2>
