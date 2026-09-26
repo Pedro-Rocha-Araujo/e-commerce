@@ -24,7 +24,11 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(0.95rem, 3vw, 1.1rem);
+  font-size: clamp(0.95rem, 4vw, 1.05rem);
+}
+
+p {
+  font-size: clamp(0.85rem, 4vw, 1.1rem);
 }
 
 span {

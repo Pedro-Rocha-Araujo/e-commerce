@@ -8,7 +8,7 @@ section.home {
 div.produtos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
 }
 

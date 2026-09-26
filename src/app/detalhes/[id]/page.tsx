@@ -1,7 +1,7 @@
 'use client'
 
 import { useParams } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import api from "@/config/api"
 import "./detalhes.css"
 import { ProdutoInterface } from "@/interfaces"
